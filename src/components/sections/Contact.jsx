@@ -4,7 +4,7 @@ import "./Contact.css";
 
 export default function Contact() {
   return (
-    <section className="contact-section" id="contact">
+    <section className="section contact-section" id="contact">
       <div className="contact-content">
         <h2 className="contact-title">Let’s Connect</h2>
         <p className="contact-text">
@@ -17,10 +17,8 @@ export default function Contact() {
         <div className="contact-links">
           <a href="https://www.linkedin.com/in/elisa-cohen-a7894a175" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://github.com/labelis" target="_blank" rel="noreferrer">GitHub</a>
-          {/* Tu peux ajouter plus de liens ici */}
         </div>
       </div>
-
     </section>
   );
 }

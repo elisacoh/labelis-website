@@ -37,7 +37,7 @@ export default function Lab({ expandedIndex, setExpandedIndex }) {
   }, [expandedIndex, projects.length]);
 
   return (
-    <section className="lab-section flex items-center gap-0" id="lab" ref={labSectionRef} data-scroll-section>
+    <section className="section lab-section" id="lab" ref={labSectionRef}>
       <div className={`lab-left ${hasMedia  ? "expanded" : ""}`} data-scroll data-scroll-speed="-2">
         <div className="lab-text">
           <span className="text-top">Big ideas grow from</span>
@@ -84,9 +84,6 @@ export default function Lab({ expandedIndex, setExpandedIndex }) {
     />
   </motion.div>
 )}
-
-
-
       </div>
 
       <div className="lab-container" ref={labContainerRef}>

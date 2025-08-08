@@ -14,7 +14,7 @@ const scrollToSection = (id) => {
 
 export default function Navbar({ hidden }) {
   return (
-    <nav className={`navbar ${hidden ? "navbar-hidden" : ""}`}>
+    <nav className="navbar">
       <ul className="nav-links">
         <li><span onClick={() => scrollToSection("home")}>[Home]</span></li>
         <li><span onClick={() => scrollToSection("lab")}>[Lab]</span></li>

@@ -4,7 +4,7 @@ import TypeWriter from "../ui/TypeWriter.jsx";
 
 export default function Home() {
   return (
-    <section className="home-container" id="home">
+    <section className="section home-container" id="home">
       <div className="home-content">
         <h1 className="brand">Labelis</h1>
         <h2 className="byline">by Elisa Cohen</h2>

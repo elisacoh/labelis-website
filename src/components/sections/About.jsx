@@ -4,7 +4,7 @@ import "./About.css";
 
 export default function About() {
   return (
-    <section className="about-container" id="about">
+    <section className="section about-container" id="about">
       <div className="about-content">
         <h2 className="about-title">About Me</h2>
         <p className="about-paragraph">Hi, welcome to my lab, I'm Elisa.</p>
@@ -49,10 +49,6 @@ Today, I navigate between product strategy, UX, and development, depending on th
 What defines me? I’m a builder. I love imagining and transforming ideas into real, thoughtful products. I care about clarity, usefulness, and depth, and I’m not afraid to rethink everything when it doesn’t feel right.
 
 </p>
-
-
-
-
       </div>
     </section>
   );

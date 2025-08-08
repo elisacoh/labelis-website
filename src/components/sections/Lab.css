@@ -1,27 +1,21 @@
 .lab-section {
-  position: relative;
-  height: 100vh;
-  overflow: visible;
   background-color: white;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  padding-right: 2rem;
+  align-items: stretch;
+  min-height: 100vh;
+  padding: 0;
 }
-
 
 .lab-container {
   width: 70%;
-  padding-top: 6rem;
+  padding: 6rem 2rem 2rem 0;
   background-color: white;
   color: black;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: visible;
+  max-height: 100vh;
   overflow-y: auto;
-  position: relative;
 }
 
 .project-grid {
@@ -29,13 +23,7 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  margin-top: 0rem;
 }
-
-
-
-
-
 
 .status.done {
   background-color: #d1fae5;
@@ -52,38 +40,24 @@
   color: #92400e;
 }
 
-
 .lab-left {
-  /*max-width: 30%;*/
   width: 30%;
-  /*border: cyan solid 2px;*/
-  height: 100vh;
-  padding: 0;
-  position: sticky;
-  top: 0;
+  padding: 2rem;
   font-family: 'Playfair Display', serif;
   color: #111;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  /*border: #4761ff 3px solid;*/
   text-align: left;
+  position: relative;
 }
 
 .lab-text {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  max-height: 100%;
-  /*border: #065f46 5px solid;*/
-  /*max-width: 100%;*/
-  font-size: 17vh;
+  font-size: clamp(3rem, 12vw, 8rem);
   font-weight: 700;
   line-height: 0.8;
   transition: all 0.6s ease;
-  overflow: visible;
 }
 
 .lab-text .text-top,
@@ -107,7 +81,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 0;
   display: flex;
   justify-content: center;
@@ -118,7 +92,6 @@
 .lab-preview img {
   width: 100%;
   height: 100%;
-  /*object-fit: cover; !* cover ou "contain" si tu veux tout voir sans crop *!*/
   object-fit: fill;
 }
 
@@ -126,51 +99,47 @@
   transition: gap 0.4s ease;
 }
 
-/* Adaptations mobile et tablette */
-@media (max-width: 1024px) {
+/* Mobile et tablette */
+@media (max-width: 1200px) {
   .lab-section {
     flex-direction: column;
-    padding-right: 0;
-    min-width: 100%;
+    min-height: auto;
   }
   
   .lab-left {
     width: 100%;
-    height: 40vh;
-    position: relative;
-    padding: 2rem;
+    min-height: 50vh;
+    padding: 3rem 2rem;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
   
   .lab-text {
-    font-size: 8vh;
+    font-size: clamp(2rem, 8vw, 4rem);
     line-height: 1;
   }
   
   .lab-container {
     width: 100%;
-    min-width: 100%;
-    padding-top: 2rem;
-    padding: 2rem 1rem;
+    padding: 2rem;
+    max-height: none;
   }
   
   .lab-preview {
-    position: relative;
-    height: 30vh;
+    height: 40vh;
     margin-top: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .lab-left {
-    height: 30vh;
+    min-height: 40vh;
     padding: 1rem;
   }
   
   .lab-text {
-    font-size: 6vh;
+    font-size: clamp(1.5rem, 6vw, 3rem);
   }
   
   .lab-container {
@@ -182,6 +151,6 @@
   }
   
   .lab-preview {
-    height: 25vh;
+    height: 30vh;
   }
 }
