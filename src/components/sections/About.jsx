@@ -7,8 +7,7 @@ export default function About() {
     <section className="about-container" id="about">
       <div className="about-content">
         <h2 className="about-title">About Me</h2>
-        <p className="about-paragraph">
-  <p className="about-paragraph">Hi, welcome to my lab, I'm Elisa.</p>
+        <p className="about-paragraph">Hi, welcome to my lab, I'm Elisa.</p>
 
 <p className="about-paragraph">
 
@@ -54,7 +53,6 @@ What defines me? I’m a builder. I love imagining and transforming ideas into r
 
 
 
-        </p>
       </div>
     </section>
   );
