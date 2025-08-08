@@ -25,32 +25,20 @@ body {
 }
 
 /* ----------- SCROLL SNAP (uniquement si .snap-enabled) ----------- */
-/*body.snap-enabled {*/
-/*  scroll-snap-type: y mandatory;*/
-/*}*/
+body.snap-enabled {
+  scroll-snap-type: y mandatory;
+}
 
 .snap-section {
-  /*padding: 3rem;*/
   min-width: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   height: 100vh;
   width: 100%;
-  /*width: 100vw;*/
-  /*border: #3730a3 4px solid;*/
-  /*margin-bottom: 2px; !* or more *!*/
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/*.snap-section {*/
-/*  scroll-snap-align: start;*/
-/*  scroll-snap-stop: always;*/
-/*  height: 100vh;*/
-/*  width: 100vw;*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*}*/
 
 
 
@@ -58,11 +46,9 @@ body {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
-  /*border: magenta 4px solid;*/
   width: 100%;
   margin: 0;
   padding: 0;
-
 }
 
 /* ----------- MOBILE & TABLET ADAPTATIONS ----------- */

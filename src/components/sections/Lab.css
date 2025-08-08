@@ -1,43 +1,34 @@
 .lab-section {
   position: relative;
-  min-height: auto;
+  height: 100vh;
   overflow: visible;
   background-color: white;
-  /*padding: 0;*/
-  /*border: 15px yellow solid;*/
   display: flex;
   flex-direction: row;
-  max-height: none;
-  min-width: 100vh;
+  width: 100%;
   padding-right: 2rem;
-  /*border: #065f46 solid 3px;*/
 }
 
 
 .lab-container {
   width: 70%;
-  min-width: 70vw;
   padding-top: 6rem;
-  /*padding-top: 5rem;*/
   background-color: white;
   color: black;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
   overflow: visible;
   overflow-y: auto;
-  max-height: 100vh;
   position: relative;
-  /*border: 2px dashed crimson;*/
 }
 
 .project-grid {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 100%; /* ✅ prend toute la largeur du .lab-container */
+  width: 100%;
   margin-top: 0rem;
 }
 
