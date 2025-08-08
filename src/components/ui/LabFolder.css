@@ -1,0 +1,25 @@
+/*.lab-folder {*/
+/*  width: 100%;*/
+/*  background: #fff;*/
+/*  border: 2px solid #111;*/
+/*  border-top-width: 4px;*/
+/*  border-radius: 8px 8px 0 0;*/
+/*  margin-bottom: -50px;*/
+/*  position: relative;*/
+/*  z-index: 1;*/
+/*  transition: all 0.3s ease;*/
+/*  overflow: hidden;*/
+/*  cursor: pointer;*/
+/*  border: #065f46 5px solid;*/
+
+/*}*/
+
+/*.lab-folder.expanded {*/
+/*  z-index: 100;*/
+/*  margin-bottom: 2rem; !* Assure qu’il laisse de la place en bas *!*/
+/*}*/
+
+/*.lab-content {*/
+/*  padding: 1.5rem;*/
+/*  animation: fadeIn 0.3s ease-in-out;*/
+/*}*/

@@ -1,0 +1,40 @@
+/* src/components/About.css */
+.about-container {
+  max-height: 70vh;
+  width: 100%;
+  height: auto; /* pas min-height, sinon ça s'ajuste au contenu */
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column; /* nécessaire pour empiler le texte verticalement */
+  justify-content: center;
+  align-items: center; /* ← centre verticalement */
+  border-radius: 20px;
+  padding: 2% 2%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: fit-content;
+  /*margin: auto; !* ← Centre horizontalement (et verticalement si parent a height) *!*/
+  margin: auto;
+}
+
+.about-content {
+  max-height: inherit;
+  max-width: 800px;
+  text-align: left;
+  overflow: auto;
+}
+
+
+.about-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}

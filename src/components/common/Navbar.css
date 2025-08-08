@@ -1,0 +1,55 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0); /* 👈 combine X et Y ici */
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
+
+
+  /*border: 2px dashed black;*/
+
+}
+
+.navbar-hidden {
+  transform: translate(-50%, -100%); /* 👈 conserve le X */
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 3rem; /* espace entre les liens */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links li a:hover {
+  opacity: 0.5;
+}
+
+.nav-links li span {
+  cursor: pointer;
+  font-size: 1rem;
+  color: black;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-links li span:hover {
+  opacity: 0.5;
+}

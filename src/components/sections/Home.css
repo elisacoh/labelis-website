@@ -1,0 +1,56 @@
+.home-container {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0rem;
+  box-sizing: border-box;
+}
+
+.home-content {
+  max-width: 90vw;
+}
+
+.subtitle {
+  padding-top: 5rem;
+}
+
+.brand {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.byline {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  margin: 0.5rem 0;
+  opacity: 0.6;
+}
+
+.explore-button {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid black;
+  transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+  transform: translateX(5px);
+  border-color: transparent;
+}
+
+/* Responsive optimisé */
+@media (max-width: 600px) {
+  .explore-button {
+    font-size: 1rem;
+  }
+}
