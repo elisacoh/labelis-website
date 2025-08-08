@@ -5,6 +5,7 @@ html, body, #root {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
 }
 
 body {
@@ -34,7 +35,7 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   height: 100vh;
-  width: 100vw; /* SUPPRIMER CA */
+  width: 100%;
   /*width: 100vw;*/
   /*border: #3730a3 4px solid;*/
   /*margin-bottom: 2px; !* or more *!*/
@@ -58,12 +59,47 @@ body {
   overflow-y: scroll;
   height: 100vh;
   /*border: magenta 4px solid;*/
-  width: 100vw; /* SUPPRIMER CA */
+  width: 100%;
   margin: 0;
   padding: 0;
 
 }
 
+/* ----------- MOBILE & TABLET ADAPTATIONS ----------- */
+@media (max-width: 768px) {
+  .snap-container {
+    scroll-snap-type: none; /* Désactive le snap sur mobile pour une meilleure UX */
+  }
+  
+  .snap-section {
+    min-height: 100vh;
+    height: auto; /* Permet au contenu de définir la hauteur */
+    scroll-snap-align: none;
+  }
+}
+
+/* Fixes pour iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .snap-container {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .snap-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+}
 
 
 /* ----------- SCROLLBAR STYLING ----------- */

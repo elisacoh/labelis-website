@@ -38,3 +38,52 @@
   line-height: 1.7;
   margin-bottom: 1.2rem;
 }
+/* Adaptations mobile et tablette pour About */
+@media (max-width: 1024px) {
+  .about-container {
+    max-height: none;
+    height: auto;
+    max-width: 90%;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+  }
+  
+  .about-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    max-width: 95%;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    margin: 1rem auto;
+  }
+  
+  .about-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    margin: 0.5rem;
+  }
+  
+  .about-paragraph {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+}

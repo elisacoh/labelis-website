@@ -27,6 +27,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-links li a {
@@ -48,8 +50,48 @@
   font-weight: 500;
   transition: opacity 0.3s ease;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-links li span:hover {
   opacity: 0.5;
+}
+
+/* Adaptations mobile pour la navbar */
+@media (max-width: 768px) {
+  .navbar {
+    top: 1rem;
+    left: 50%;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-links li span,
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: 95%;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .nav-links li span,
+  .nav-links li a {
+    font-size: 0.8rem;
+  }
 }

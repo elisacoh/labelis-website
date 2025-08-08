@@ -34,21 +34,29 @@
   z-index: 3;
 }
 
+  padding: 0 1rem; /* Espacement sur mobile */
 .fade-visible {
   opacity: 1;
 }
-
+  font-size: clamp(2rem, 8vw, 3rem);
 .intro-overlay {
   position: fixed;
   inset: 0;
   background: black;
-  z-index: 10000;
+  font-size: clamp(1rem, 4vw, 1.5rem);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
   transition: opacity 1s ease;
+  /* Fixes pour mobile */
+  width: 100vw;
+  height: 100vh;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
 }
 
 .text-fade-out {
@@ -64,6 +72,10 @@
 .intro-overlay.fade-out {
   opacity: 0;
   pointer-events: none;
+  /* Optimisations pour mobile et Safari */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
   transition: opacity 1s ease;
 }
 
@@ -81,3 +93,39 @@
   opacity: 0.6;
 }
 
+/* Adaptations mobile pour l'intro */
+@media (max-width: 768px) {
+  .intro-text {
+    padding: 0 2rem;
+  }
+  
+  .intro-video {
+    /* Assure que la vidéo couvre bien l'écran sur mobile */
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+/* Fixes spécifiques pour Safari iOS */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  .intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .intro-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  }
+}

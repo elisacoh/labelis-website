@@ -102,3 +102,28 @@
   justify-content: center;
   align-items: center;
 }
+/* Adaptations mobile pour les flèches de scroll */
+@media (max-width: 768px) {
+  .scroll-arrows {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+  
+  .arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+    opacity: 0.3;
+  }
+  
+  .arrow:hover {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-arrows {
+    display: none; /* Cache les flèches sur très petit écran */
+  }
+}

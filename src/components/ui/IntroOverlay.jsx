@@ -11,6 +11,13 @@ export default function IntroOverlay({ onFinish }) {
     const video = videoRef.current;
     if (!video) return;
 
+    // Configuration pour Safari et mobile
+    video.playsInline = true;
+    video.muted = true;
+    video.autoplay = true;
+    
+    // Force le chargement sur mobile
+    video.load();
     const handleTimeUpdate = () => {
       if (video.currentTime >= 5 && !hasStartedFade) {
         setHasStartedFade(true);
@@ -22,12 +29,17 @@ export default function IntroOverlay({ onFinish }) {
       }
     };
 
-    const handleKEyDown = (e) => {
+    const handleKeyDown = (e) => {
         if (e.key === "Escape" && !hasStartedFade) {
             triggerFadeOut();
         }
     }
 
+    const handleTouchStart = (e) => {
+      if (!hasStartedFade) {
+        triggerFadeOut();
+      }
+    }
     const triggerFadeOut = () => {
         setHasStartedFade(true);
         fadeRef.current?.classList.add("fade-visible");
@@ -35,9 +47,31 @@ export default function IntroOverlay({ onFinish }) {
         setTimeout(onFinish, 1500);
     }
 
+    // Fallback si la vidéo ne se charge pas (notamment sur mobile)
+    const handleError = () => {
+      console.log("Video failed to load, skipping intro");
+      triggerFadeOut();
+    }
+
+    const handleCanPlay = () => {
+      video.play().catch(() => {
+        // Si autoplay échoue, on passe directement à la suite
+        triggerFadeOut();
+      });
+    }
     video.addEventListener("timeupdate", handleTimeUpdate);
-    window.addEventListener("keydown", handleKEyDown)
-    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+    video.addEventListener("error", handleError);
+    video.addEventListener("canplay", handleCanPlay);
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("touchstart", handleTouchStart);
+    
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+      video.removeEventListener("error", handleError);
+      video.removeEventListener("canplay", handleCanPlay);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("touchstart", handleTouchStart);
+    };
   }, [onFinish, hasStartedFade]);
 
   return (
@@ -49,6 +83,8 @@ export default function IntroOverlay({ onFinish }) {
         autoPlay
         muted
         playsInline
+        webkit-playsinline="true"
+        preload="auto"
       />
 
       <div
